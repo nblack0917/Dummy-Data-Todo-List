@@ -40,6 +40,16 @@ button:hover {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+#todo-list li {
+    margin: 20px 0;
+}
+
 #nextButton {
     display: none;
+}
+
+li > button {
+    font-size: .5em;
+    padding: 5px;
+    margin-left: 15px;
 }

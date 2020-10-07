@@ -16,6 +16,12 @@ let arrayOfTodos = [
     "completed": false
   }]
 
+// const changeCompelted = (element) => {
+//   arrayOfTodos[0].completed = true;
+//   console.log(element.parentElement)
+//   element.parentElement.style.color = "green"
+// }
+
 const fetchTodos = () => {
     fetch('https://jsonplaceholder.typicode.com/todos')
     .then( (response) => response.json())
@@ -24,6 +30,7 @@ const fetchTodos = () => {
 
 const logTodos = () => {
     console.log(arrayOfTodos)
+    
   }
 
 const populateTodos = () => {
@@ -36,12 +43,27 @@ const populateTodos = () => {
       let orderedList = document.getElementById("todo-list");
       const newLI = document.createElement("LI");
       orderedList.appendChild(newLI);
+      newLI.classList.add(i);
       let newContent = document.createTextNode(arrayOfTodos[i].title);
       newLI.appendChild(newContent)
 
       if (!arrayOfTodos[i].completed) {
         newLI.style.color = "red"
         newLI.style.fontWeight = "600"
+        const checkButton = document.createElement("button");
+        checkButton.classList.add(i)
+        checkButton.innerHTML = "Done?";
+        console.log(checkButton.className)
+        // checkButton.onclick = changeCompelted(checkButton.className);
+        checkButton.onclick = function () {
+          arrayOfTodos[this.className].completed = true;
+          console.log(this.parentElement)
+          this.parentElement.style.color = "green"
+          this.parentElement.style.fontWeight = "400"
+          this.style.display = "none"
+        }
+        newLI.appendChild(checkButton)
+        
       } else {
         newLI.style.color = "green"
       }
