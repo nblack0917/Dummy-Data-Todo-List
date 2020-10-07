@@ -29,5 +29,11 @@ const populateTodos = () => {
       orderedList.appendChild(newLI);
       let newContent = document.createTextNode(arrayOfTodos[i].title);
       newLI.appendChild(newContent)
+
+      if (!arrayOfTodos[i].completed) {
+        newLI.style.color = "red"
+      } else {
+        newLI.style.color = "green"
+      }
   }
 }
