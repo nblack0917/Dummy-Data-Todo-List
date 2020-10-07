@@ -1,3 +1,7 @@
+const nextButton = document.getElementById("nextButton")
+x = 20;
+i = 0
+
 let arrayOfTodos = [
     {
     "userId": 14,
@@ -23,7 +27,12 @@ const logTodos = () => {
   }
 
 const populateTodos = () => {
-  for(let i = 0; i < arrayOfTodos.length; i++) {
+  if (x <= 180){
+    document.getElementById("nextButton").style.display = "block"
+  } else {
+    document.getElementById("nextButton").style.display = "none"
+  }
+  for(i; i < x; i++) {
       let orderedList = document.getElementById("todo-list");
       const newLI = document.createElement("LI");
       orderedList.appendChild(newLI);
@@ -32,8 +41,12 @@ const populateTodos = () => {
 
       if (!arrayOfTodos[i].completed) {
         newLI.style.color = "red"
+        newLI.style.fontWeight = "600"
       } else {
         newLI.style.color = "green"
       }
   }
+  x = x + 20;
 }
+
+

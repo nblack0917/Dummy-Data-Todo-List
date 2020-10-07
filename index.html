@@ -4,14 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
     <title>Dummy Data Todo List</title>
 </head>
 <body>
-    <button onclick="fetchTodos()">Fetch Todos</button>
-    <button onclick="logTodos()">Log Todos</button>
-    <button onclick="populateTodos()">Populate Todos</button>
-    <ol id="todo-list">
-      <!-- LIs will go here -->
-    </ol>
+    <section class="wrapper">
+      <div class="button-box">
+        <button onclick="fetchTodos()">Fetch Todos</button>
+        <button onclick="logTodos()">Log Todos</button>
+        <button onclick="populateTodos()">Populate Todos</button>
+      </div>
+      <div class="list-box">
+        <ol id="todo-list">
+          <!-- LIs will go here -->
+        </ol>
+        <button id="nextButton" onclick="populateTodos()">Next 20 Results</button>
+      </div>
+    </section>
 </body>
 </html>
