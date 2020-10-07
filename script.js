@@ -53,11 +53,10 @@ const populateTodos = () => {
         const checkButton = document.createElement("button");
         checkButton.classList.add(i)
         checkButton.innerHTML = "Done?";
-        console.log(checkButton.className)
-        // checkButton.onclick = changeCompelted(checkButton.className);
+        // console.log(checkButton.className)
         checkButton.onclick = function () {
           arrayOfTodos[this.className].completed = true;
-          console.log(this.parentElement)
+          // console.log(this.parentElement)
           this.parentElement.style.color = "green"
           this.parentElement.style.fontWeight = "400"
           this.style.display = "none"
