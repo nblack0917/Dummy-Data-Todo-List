@@ -8,7 +8,7 @@ let arrayOfTodos = [
   {
     "userId": 20,
     "id": 2,
-    "title": "delectus aut autem",
+    "title": "delectus aut statem",
     "completed": false
   }]
 
@@ -23,12 +23,11 @@ const logTodos = () => {
   }
 
 const populateTodos = () => {
-    let orderedList = document.getElementById("todo-list");
-    const newLI = document.createElement("LI");
-    orderedList.appendChild(newLI);
-    let newContent = document.createTextNode(arrayOfTodos[0].title);
-    newLI.appendChild(newContent)
-    
-
-
+  for(let i = 0; i < arrayOfTodos.length; i++) {
+      let orderedList = document.getElementById("todo-list");
+      const newLI = document.createElement("LI");
+      orderedList.appendChild(newLI);
+      let newContent = document.createTextNode(arrayOfTodos[i].title);
+      newLI.appendChild(newContent)
   }
+}
