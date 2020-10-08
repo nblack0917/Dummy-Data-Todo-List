@@ -10,7 +10,9 @@
 .button-box {
     display: flex;
     width: 100%;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
     /* background-color: blueviolet; */
 }
 
@@ -22,12 +24,17 @@ button {
     text-shadow: 1px 1px 3px darkslategray;
     border: 1px solid dimgray;
     background: silver;
-    margin: 10px 0;
+    margin: 10px 15px;
 }
 
 button:hover {
     cursor: pointer;
     box-shadow: 0 0 4px dimgray;
+}
+
+input {
+    height: 20px;
+    width: 110px;
 }
 
 .list-box {

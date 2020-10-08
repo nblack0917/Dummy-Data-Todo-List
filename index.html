@@ -12,7 +12,13 @@
       <div class="button-box">
         <button onclick="fetchTodos()">Fetch Todos</button>
         <button onclick="logTodos()">Log Todos</button>
-        <button onclick="populateTodos()">Populate Todos</button>
+        <button onclick="populateTodos()">Populate All Todos</button>
+        <input type="number" name="userID" id="userID" placeholder="Enter User ID #" min="0" max="10">
+        <button onclick="populateUserTodos()">Populate User Todos</button>
+        <button onclick="toggleCompleted()">Completed?</button>
+      </div>
+      <div class="button-box">
+        <button onclick="clearList()">Clear List</button>
       </div>
       <div class="list-box">
         <ol id="todo-list">
