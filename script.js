@@ -44,6 +44,7 @@ const clearList = () => {
   document.getElementById("nextButton").style.display = "none"
   i = 0;
   x = 20;
+  document.getElementById("toggleButton").innerHTML = "Filter";
 }
 
 const populateTodos = () => {
@@ -175,12 +176,14 @@ const toggleCompleted = () => {
     console.log(completed)
     completedList = list.filter(list => list.completed == false)
     createList()
+    document.getElementById("toggleButton").innerHTML = "Completed";
   } else if (completed == false) {
     console.log(completed)
     completed = true;
     console.log(completed)
     completedList = list.filter(list => list.completed == true)
     createList()
+    document.getElementById("toggleButton").innerHTML = "All";
   } else if (completed == true || completed == false){
     console.log(completed)
     completed = "all"
@@ -188,6 +191,7 @@ const toggleCompleted = () => {
     i = 0;
     x = 20;
     clearList();
+    document.getElementById("toggleButton").innerHTML = "Incomplete";
     for(i; i < x; i++) {
       let orderedList = document.getElementById("todo-list");
       const newLI = document.createElement("LI");
