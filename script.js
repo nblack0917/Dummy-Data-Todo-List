@@ -21,11 +21,6 @@ let arrayOfTodos = [
 
   let userArrayOfTodos = [];
 
-// const changeCompelted = (element) => {
-//   arrayOfTodos[0].completed = true;
-//   console.log(element.parentElement)
-//   element.parentElement.style.color = "green"
-// }
 
 const fetchTodos = () => {
     fetch('https://jsonplaceholder.typicode.com/todos')
@@ -47,8 +42,13 @@ const clearList = () => {
   document.getElementById("toggleButton").innerHTML = "Filter";
 }
 
-const populateTodos = () => {
+const populateAllTodos = () => {
   clearList();
+  populateTodos();
+}
+
+const populateTodos = () => {
+  
   list = arrayOfTodos;
   if (x <= 180){
     document.getElementById("nextButton").style.display = "block"
